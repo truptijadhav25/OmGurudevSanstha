@@ -1,0 +1,34 @@
+/* Logo Styling */
+.logo-img {
+  height: 45px;
+  width: auto;
+  border-radius: 50%;
+  background-color: white;
+  padding: 4px;
+}
+
+/* Navbar Styling */
+.navbar {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+/* Nav Link Styling */
+.nav-link {
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  position: relative;
+}
+
+/* Hover Effect */
+.nav-link:hover {
+  color: #ffc107;
+}
+
+/* Active Link Highlight */
+.nav-link.active {
+  color: #ffc107 !important;
+  font-weight: 600;
+  border-bottom: 2px solid #ffc107;
+}

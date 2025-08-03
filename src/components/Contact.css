@@ -1,0 +1,19 @@
+.contact-heading {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.contact-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.contact-form {
+  transition: all 0.3s ease-in-out;
+}
+
+.contact-form:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
