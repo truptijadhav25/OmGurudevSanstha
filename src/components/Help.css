@@ -1,0 +1,134 @@
+.help-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 2rem 2rem; /* Added top padding */
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.help-container h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #0b3d91;
+}
+
+.help-container p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.help-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.help-card {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 1.5rem;
+  flex: 1 1 300px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.help-card:hover {
+  transform: translateY(-5px);
+}
+
+.help-card span {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.help-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #005f73;
+}
+
+.help-card p {
+  font-size: 0.95rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  margin: 0.25rem;
+  background-color: #008080;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #006666;
+}
+
+.custom-amount {
+  background-color: white;
+  color: #008080;
+  border: 1px solid #008080;
+}
+
+.custom-amount:hover {
+  background-color: #f0f0f0;
+}
+
+.quick-contact-section {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.quick-donation,
+.contact-info {
+  flex: 1 1 300px;
+  background-color: #eef5f9;
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.quick-donation h4,
+.contact-info h4 {
+  color: #003366;
+  margin-bottom: 1rem;
+}
+
+.contact-info p,
+.quick-donation p {
+  font-size: 0.9rem;
+  color: #444;
+  margin: 0.5rem 0;
+}
+
+.social-links {
+  margin-top: 1rem;
+}
+
+.social-links a {
+  margin: 0 0.5rem;
+  color: #0077b5;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.social-links a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .help-options, .quick-contact-section {
+    flex-direction: column;
+    align-items: center;
+  }
+}

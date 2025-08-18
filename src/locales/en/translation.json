@@ -1,0 +1,61 @@
+{
+  "meta": {
+    "title": "OM GURUDEV SANSTHA"
+  },
+  "navbar": {
+    "brand": "OM GURUDEV SANSTHA",
+    "home": "Home",
+    "about": "About",
+    "focus": "Focus Areas",
+    "projects": "Projects",
+    "impact": "Impact",
+    "team": "Team",
+    "partners": "Partners",
+    "testimonials": "Testimonials",
+    "help": "Help",
+    "language": "Language"
+  },
+  "home": {
+    "welcome": "Welcome to Om Gurudev Sanstha"
+  },
+  "about": {
+    "title": "About Us",
+    "text": "We are a multipurpose charitable organization..."
+  },
+  "team": {
+    "title": "Meet Our Team",
+    "subtitle": "Our leadership brings experience, passion, and community-first values.",
+    "members": [
+      {
+        "name": "Smt. Priti Engle",
+        "role": "President",
+        "image": "/priti ingle.jpg",
+        "bio": "Founder of an NGO dedicated to social upliftment and rural development. Over a decade of service leading educational programs, women's empowerment initiatives, and community health projects."
+      },
+      {
+        "name": "Dr. Dilip Pawar",
+        "role": "Secretary",
+        "image": "/dilip Pawar.jpg",
+        "bio": "Drives operations and coordinates stakeholders for effective program execution. Made significant impact in education through innovative learning programs and microfinance solutions for underserved communities."
+      },
+      {
+        "name": "Shree. Ankush Sapkal",
+        "role": "Vice President",
+        "image": "/ankush sapkal.jpg",
+        "bio": "Leader in digital transformation and education with impact in the IT industry. Helps students secure IT and cybersecurity careers through training programs and mentorship."
+      },
+      {
+        "name": "Shree. Rama Engle",
+        "role": "Joint Secretary",
+        "image": "/rama ingle.jpg",
+        "bio": "Experienced advocate and astrology expert with significant impact in the legal and spiritual guidance sectors."
+      }
+    ]
+  },
+  "footer": {
+    "contact": "Contact Us",
+    "account": "Account No: 60544638141",
+    "ifsc": "IFSC: MAHB000019",
+    "reg": "Registration No: F-11598"
+  }
+}
