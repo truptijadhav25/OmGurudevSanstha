@@ -1,8 +1,8 @@
 .help-container {
   max-width: 1200px;
   margin: 0 auto;
-<<<<<<< HEAD
-  padding: 0 2rem 2rem;
+  padding: 100px 2rem 2rem;
+  text-align: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
 }
@@ -43,17 +43,20 @@
   margin-bottom: 20px;
   font-weight: 700;
 }
+
 .help-hero p {
   font-size: 1.2rem;
   margin-bottom: 30px;
   opacity: 0.9;
 }
+
 .help-buttons {
   display: flex;
   justify-content: center;
   gap: 15px;
   flex-wrap: wrap;
 }
+
 .help-btn {
   padding: 12px 25px;
   border-radius: 30px;
@@ -61,46 +64,30 @@
   text-decoration: none;
   transition: 0.3s ease;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-.help-btn.donate {
-  background: #ff6b6b;
+  cursor: pointer;
+  border: none;
   color: white;
 }
+
+.help-btn.donate {
+  background: #ff6b6b;
+}
+
 .help-btn.donate:hover {
   background: #ff4c4c;
   transform: scale(1.05);
 }
+
 .help-btn.volunteer {
   background: #4cafef;
-  color: white;
 }
+
 .help-btn.volunteer:hover {
   background: #1e90ff;
   transform: scale(1.05);
 }
 
 /* Section Titles */
-.help-container h2 {
-  font-size: 2.4rem;
-  margin: 2rem 0 0.5rem;
-  color: #222;
-  font-weight: 700;
-  text-align: center;
-}
-.subtitle {
-  font-size: 1.1rem;
-  color: #666;
-  text-align: center;
-}
-
-/* Help Options */
-=======
-  padding: 100px 2rem 2rem; /* Added top padding */
-  text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-
 .help-container h2 {
   font-size: 2rem;
   margin-bottom: 0.5rem;
@@ -112,7 +99,7 @@
   color: #555;
 }
 
->>>>>>> 7d6bcea991caa169dc4b72c4d43d00b70a1a97b2
+/* Help Options */
 .help-options {
   display: flex;
   flex-wrap: wrap;
@@ -120,42 +107,44 @@
   justify-content: center;
   margin-top: 2rem;
 }
-<<<<<<< HEAD
+
 .help-card {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(12px);
-  border-radius: 18px;
-  padding: 2rem 1.5rem;
-  flex: 1 1 260px;
-  max-width: 300px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 1.5rem;
+  flex: 1 1 300px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
   text-align: center;
 }
+
 .help-card:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
 }
+
 .help-card .icon {
   font-size: 2.6rem;
   color: #008080;
   margin-bottom: 0.75rem;
   transition: transform 0.3s ease;
 }
+
 .help-card:hover .icon {
   transform: scale(1.2) rotate(5deg);
 }
+
 .help-card h3 {
   font-size: 1.3rem;
   margin-bottom: 0.6rem;
   color: #005f73;
 }
+
 .help-card p {
   font-size: 0.95rem;
   color: #444;
   margin-bottom: 1rem;
 }
+
 .badge {
   background: #ffb703;
   color: white;
@@ -167,67 +156,22 @@
   top: 15px;
   right: 15px;
 }
+
 button {
   padding: 0.7rem 1.5rem;
-=======
-
-.help-card {
-  background-color: #f9f9f9;
-  border-radius: 12px;
-  padding: 1.5rem;
-  flex: 1 1 300px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;
-}
-
-.help-card:hover {
-  transform: translateY(-5px);
-}
-
-.help-card span {
-  font-size: 2rem;
-  display: block;
-  margin-bottom: 0.75rem;
-}
-
-.help-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  color: #005f73;
-}
-
-.help-card p {
-  font-size: 0.95rem;
-  color: #333;
-  margin-bottom: 1rem;
-}
-
-button {
-  padding: 0.5rem 1rem;
->>>>>>> 7d6bcea991caa169dc4b72c4d43d00b70a1a97b2
   margin: 0.25rem;
   background-color: #008080;
   color: white;
   border: none;
-<<<<<<< HEAD
   border-radius: 50px;
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.2s ease;
 }
+
 button:hover {
   background-color: #006666;
   transform: scale(1.07);
-}
-
-/* Contact + Donation Section */
-=======
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #006666;
 }
 
 .custom-amount {
@@ -240,7 +184,7 @@ button:hover {
   background-color: #f0f0f0;
 }
 
->>>>>>> 7d6bcea991caa169dc4b72c4d43d00b70a1a97b2
+/* Contact + Donation Section */
 .quick-contact-section {
   display: flex;
   flex-wrap: wrap;
@@ -248,38 +192,6 @@ button:hover {
   justify-content: center;
   gap: 2rem;
 }
-<<<<<<< HEAD
-.quick-donation,
-.contact-info,
-.bank-transfer {
-  flex: 1 1 300px;
-  max-width: 360px;
-  background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(10px);
-  padding: 1.8rem;
-  border-radius: 16px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease;
-  text-align: center;
-}
-.quick-donation:hover,
-.contact-info:hover,
-.bank-transfer:hover {
-  transform: translateY(-8px);
-}
-.quick-donation h4,
-.contact-info h4,
-.bank-transfer h4 {
-  color: #003366;
-  margin-bottom: 1rem;
-  font-size: 1.3rem;
-  font-weight: 700;
-}
-.contact-info p,
-.quick-donation p,
-.bank-transfer p {
-  font-size: 0.95rem;
-=======
 
 .quick-donation,
 .contact-info {
@@ -298,37 +210,11 @@ button:hover {
 .contact-info p,
 .quick-donation p {
   font-size: 0.9rem;
->>>>>>> 7d6bcea991caa169dc4b72c4d43d00b70a1a97b2
   color: #444;
   margin: 0.5rem 0;
 }
 
-<<<<<<< HEAD
 /* Social Links */
-.social-links {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
-  gap: 0.6rem;
-}
-.social-links a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #f0f0f0;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  font-size: 1.2rem;
-  color: #0077b5;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-.social-links a:hover {
-  background: #0077b5;
-  color: white;
-  transform: scale(1.2);
-=======
 .social-links {
   margin-top: 1rem;
 }
@@ -342,12 +228,10 @@ button:hover {
 
 .social-links a:hover {
   text-decoration: underline;
->>>>>>> 7d6bcea991caa169dc4b72c4d43d00b70a1a97b2
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-<<<<<<< HEAD
   .help-hero {
     height: 50vh;
   }
@@ -375,6 +259,7 @@ button:hover {
     max-width: 90%;
   }
 }
+
 /* Wave divider for hero */
 .wave-divider {
   position: absolute;
@@ -390,6 +275,7 @@ button:hover {
 .progress-container {
   margin-top: 1rem;
 }
+
 .progress-bar {
   width: 100%;
   height: 20px;
@@ -397,6 +283,7 @@ button:hover {
   border-radius: 10px;
   overflow: hidden;
 }
+
 .progress-fill {
   background: linear-gradient(90deg, #4cafef, #008080);
   height: 100%;
@@ -413,6 +300,7 @@ button:hover {
   margin-top: 4rem;
   text-align: center;
 }
+
 .impact-stats {
   display: flex;
   justify-content: center;
@@ -420,6 +308,7 @@ button:hover {
   flex-wrap: wrap;
   margin-top: 2rem;
 }
+
 .stat-card {
   background: white;
   padding: 2rem;
@@ -428,24 +317,22 @@ button:hover {
   width: 220px;
   transition: transform 0.3s ease;
 }
+
 .stat-card:hover {
   transform: translateY(-8px) scale(1.05);
 }
+
 .stat-icon {
   font-size: 2.5rem;
   color: #008080;
   margin-bottom: 0.5rem;
 }
+
 .stat-card h3 {
   font-size: 1.8rem;
   color: #003366;
 }
+
 .stat-card p {
   color: #555;
-=======
-  .help-options, .quick-contact-section {
-    flex-direction: column;
-    align-items: center;
-  }
->>>>>>> 7d6bcea991caa169dc4b72c4d43d00b70a1a97b2
 }
