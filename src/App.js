@@ -16,7 +16,10 @@ import Partners from './components/Partners';
 import Testimonials from './components/Testimonials';
 import Help from './components/Help';
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7d6bcea991caa169dc4b72c4d43d00b70a1a97b2
 function App() {
   return (
     

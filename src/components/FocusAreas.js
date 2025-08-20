@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useEffect } from "react";
 import "./FocusAreas.css";
 import "aos/dist/aos.css";
@@ -7,12 +8,21 @@ import { useTranslation } from "react-i18next";
 const FocusAreas = () => {
   const { t } = useTranslation();
 
+=======
+import React, { useEffect } from 'react';
+import './FocusAreas.css';
+import 'aos/dist/aos.css';
+import AOS from 'aos';
+
+const FocusAreas = () => {
+>>>>>>> 7d6bcea991caa169dc4b72c4d43d00b70a1a97b2
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
 
   const areas = [
     {
+<<<<<<< HEAD
       icon: "bi bi-book",
       title: t("focus.education"),
       desc: t("focus.educationText"),
@@ -42,6 +52,37 @@ const FocusAreas = () => {
       title: t("focus.rural"),
       desc: t("focus.ruralText"),
     },
+=======
+      icon: 'bi bi-book',
+      title: 'Education',
+      desc: 'Promoting literacy and quality education through innovative programs in underserved communities.'
+    },
+    {
+      icon: 'bi bi-heart-pulse',
+      title: 'Healthcare',
+      desc: 'Providing access to medical camps, health check-ups, and awareness programs for healthier lives.'
+    },
+    {
+      icon: 'bi bi-tools',
+      title: 'Skill Development',
+      desc: 'Empowering youth and women with vocational training and skill enhancement workshops.'
+    },
+    {
+      icon: 'bi bi-tree-fill',
+      title: 'Environment',
+      desc: 'Spreading environmental awareness and encouraging sustainable practices in rural regions.'
+    },
+    {
+      icon: 'bi bi-people-fill',
+      title: 'Women & Child Welfare',
+      desc: 'Improving lives of women and children by ensuring rights, safety, and growth opportunities.'
+    },
+    {
+      icon: 'bi bi-globe',
+      title: 'Rural Development',
+      desc: 'Building self-reliant villages through agricultural support, water conservation, and infrastructure.'
+    }
+>>>>>>> 7d6bcea991caa169dc4b72c4d43d00b70a1a97b2
   ];
 
   return (
@@ -57,10 +98,17 @@ const FocusAreas = () => {
           />
           <div className="focus-heading-content">
             <h2 className="focus-title">
+<<<<<<< HEAD
               {t("focus.title")}
             </h2>
             <p className="focus-subtitle">
               {t("focus.subtitle")}
+=======
+              Our <span className="highlight">Focus Areas</span>
+            </h2>
+            <p className="focus-subtitle">
+              Driving impactful change through strategic initiatives
+>>>>>>> 7d6bcea991caa169dc4b72c4d43d00b70a1a97b2
             </p>
           </div>
         </div>
