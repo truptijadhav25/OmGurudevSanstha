@@ -1,0 +1,28 @@
+.notification-banner {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(90deg, #ff8a00, #e52e71); /* bright orange to pink */
+  color: white;
+  text-align: center;
+  padding: 0.8rem 1rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 12px rgba(229, 46, 113, 0.7);
+  z-index: 1050; /* on top */
+  animation: pulseBackground 3s ease-in-out infinite;
+}
+
+/* Optional subtle pulse background animation */
+@keyframes pulseBackground {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.notification-banner p {
+  margin: 0;
+}

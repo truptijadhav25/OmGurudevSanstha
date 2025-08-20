@@ -8,6 +8,7 @@
   position: relative;
   text-align: center;
   padding: 0 20px;
+  padding-top: 50px; /* space for notification banner */
 }
 
 .hero-section::before {
@@ -23,13 +24,59 @@
 }
 
 .hero-section h1 {
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: bold;
   margin-bottom: 20px;
 }
 
 .hero-section p {
-  font-size: 1.25rem;
-  max-width: 600px;
+  font-size: 1.60rem;
+  max-width: 800px;
   margin: auto;
+}
+
+/* Running slogan fade-in */
+.hero-slogan {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.notification-banner.hero-banner {
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  color: white;
+  font-weight: 1000;          /* bolder font */
+  font-size: 1.9rem;          /* bigger text */
+  box-shadow: 0 6px 16px rgba(229, 46, 113, 0.4);
+  border-radius: 10px;
+  margin: 24px auto 36px auto;
+  position: relative;
+  overflow: hidden;
+  width: 95vw;
+  max-width: 1010px;
+  height: 3rem;               /* taller banner */
+  padding-top: 0.25rem;
+}
+
+.scrolling-text {
+  display: inline-block;
+  white-space: nowrap;
+  position: absolute;
+  animation: scrollLeft 12s linear infinite;
+  top: 50%;
+  transform: translateY(-50%);   /* vertically center */
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(100%) translateY(-50%);
+  }
+  100% {
+    transform: translateX(-100%) translateY(-50%);
+  }
 }
