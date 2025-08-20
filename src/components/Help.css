@@ -1,23 +1,98 @@
 .help-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 100px 2rem 2rem; /* Added top padding */
-  text-align: center;
+  padding: 0 2rem 2rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
 }
 
+/* Hero Banner */
+.help-hero {
+  position: relative; /* FIXED overlay issue */
+  background: url('/public/Helping_Hands.jpg') no-repeat center center/cover;
+  height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  border-radius: 20px;
+  overflow: hidden;
+}
 
+.help-hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.55);
+  z-index: 0;
+}
+
+.help-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: auto;
+  padding: 0 1rem;
+  animation: fadeInUp 1.5s ease;
+}
+
+.help-hero h1 {
+  font-size: 2.7rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+.help-hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+.help-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.help-btn {
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.help-btn.donate {
+  background: #ff6b6b;
+  color: white;
+}
+.help-btn.donate:hover {
+  background: #ff4c4c;
+  transform: scale(1.05);
+}
+.help-btn.volunteer {
+  background: #4cafef;
+  color: white;
+}
+.help-btn.volunteer:hover {
+  background: #1e90ff;
+  transform: scale(1.05);
+}
+
+/* Section Titles */
 .help-container h2 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  color: #0b3d91;
+  font-size: 2.4rem;
+  margin: 2rem 0 0.5rem;
+  color: #222;
+  font-weight: 700;
+  text-align: center;
+}
+.subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  text-align: center;
 }
 
-.help-container p {
-  font-size: 1rem;
-  color: #555;
-}
-
+/* Help Options */
 .help-options {
   display: flex;
   flex-wrap: wrap;
@@ -25,62 +100,69 @@
   justify-content: center;
   margin-top: 2rem;
 }
-
 .help-card {
-  background-color: #f9f9f9;
-  border-radius: 12px;
-  padding: 1.5rem;
-  flex: 1 1 300px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  padding: 2rem 1.5rem;
+  flex: 1 1 260px;
+  max-width: 300px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  text-align: center;
 }
-
 .help-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.2);
 }
-
-.help-card span {
-  font-size: 2rem;
-  display: block;
+.help-card .icon {
+  font-size: 2.6rem;
+  color: #008080;
   margin-bottom: 0.75rem;
+  transition: transform 0.3s ease;
 }
-
+.help-card:hover .icon {
+  transform: scale(1.2) rotate(5deg);
+}
 .help-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  margin-bottom: 0.6rem;
   color: #005f73;
 }
-
 .help-card p {
   font-size: 0.95rem;
-  color: #333;
+  color: #444;
   margin-bottom: 1rem;
 }
-
+.badge {
+  background: #ffb703;
+  color: white;
+  padding: 0.3rem 0.7rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
 button {
-  padding: 0.5rem 1rem;
+  padding: 0.7rem 1.5rem;
   margin: 0.25rem;
   background-color: #008080;
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 50px;
+  font-weight: 600;
   cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
-
 button:hover {
   background-color: #006666;
+  transform: scale(1.07);
 }
 
-.custom-amount {
-  background-color: white;
-  color: #008080;
-  border: 1px solid #008080;
-}
-
-.custom-amount:hover {
-  background-color: #f0f0f0;
-}
-
+/* Contact + Donation Section */
 .quick-contact-section {
   display: flex;
   flex-wrap: wrap;
@@ -88,47 +170,160 @@ button:hover {
   justify-content: center;
   gap: 2rem;
 }
-
 .quick-donation,
-.contact-info {
+.contact-info,
+.bank-transfer {
   flex: 1 1 300px;
-  background-color: #eef5f9;
-  padding: 1.5rem;
-  border-radius: 10px;
+  max-width: 360px;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  padding: 1.8rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+  text-align: center;
 }
-
+.quick-donation:hover,
+.contact-info:hover,
+.bank-transfer:hover {
+  transform: translateY(-8px);
+}
 .quick-donation h4,
-.contact-info h4 {
+.contact-info h4,
+.bank-transfer h4 {
   color: #003366;
   margin-bottom: 1rem;
+  font-size: 1.3rem;
+  font-weight: 700;
 }
-
 .contact-info p,
-.quick-donation p {
-  font-size: 0.9rem;
+.quick-donation p,
+.bank-transfer p {
+  font-size: 0.95rem;
   color: #444;
   margin: 0.5rem 0;
 }
 
+/* Social Links */
 .social-links {
   margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
 }
-
 .social-links a {
-  margin: 0 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f0f0;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
   color: #0077b5;
   text-decoration: none;
-  font-weight: 500;
+  transition: all 0.3s ease;
 }
-
 .social-links a:hover {
-  text-decoration: underline;
+  background: #0077b5;
+  color: white;
+  transform: scale(1.2);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .help-options, .quick-contact-section {
+  .help-hero {
+    height: 50vh;
+  }
+  .help-hero h1 {
+    font-size: 1.9rem;
+  }
+  .help-hero p {
+    font-size: 1rem;
+  }
+  .help-buttons {
+    flex-direction: column;
+  }
+  .help-btn {
+    width: 80%;
+    margin: 5px auto;
+    text-align: center;
+  }
+  .help-options,
+  .quick-contact-section {
     flex-direction: column;
     align-items: center;
   }
+  .help-card {
+    width: 100%;
+    max-width: 90%;
+  }
+}
+/* Wave divider for hero */
+.wave-divider {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'><path fill='%23ffffff' fill-opacity='1' d='M0,192L1440,64L1440,320L0,320Z'></path></svg>") no-repeat center bottom;
+  background-size: cover;
+}
+
+/* Progress bar */
+.progress-container {
+  margin-top: 1rem;
+}
+.progress-bar {
+  width: 100%;
+  height: 20px;
+  background: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.progress-fill {
+  background: linear-gradient(90deg, #4cafef, #008080);
+  height: 100%;
+  text-align: center;
+  font-size: 0.8rem;
+  color: white;
+  font-weight: bold;
+  line-height: 20px;
+  transition: width 1s ease;
+}
+
+/* Impact stats */
+.impact-section {
+  margin-top: 4rem;
+  text-align: center;
+}
+.impact-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+.stat-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  width: 220px;
+  transition: transform 0.3s ease;
+}
+.stat-card:hover {
+  transform: translateY(-8px) scale(1.05);
+}
+.stat-icon {
+  font-size: 2.5rem;
+  color: #008080;
+  margin-bottom: 0.5rem;
+}
+.stat-card h3 {
+  font-size: 1.8rem;
+  color: #003366;
+}
+.stat-card p {
+  color: #555;
 }

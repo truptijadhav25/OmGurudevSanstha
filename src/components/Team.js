@@ -25,7 +25,7 @@ const teamMembers = [
     
   },
   {
-    name: 'Shree. Rama Engle',
+    name: 'Smt. Rama Engle',
     role: 'Joint Secretary',
     image: '/rama ingle.jpg',
     bio: 'Experienced advocate and astrology expert with significant impact in the legal and spiritual guidance sectors. Provides legal counsel while helping individuals find their correct life path through astrological insights and spiritual (adhyatmik) guidance.',
