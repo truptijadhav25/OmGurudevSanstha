@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; 
 import './Hero.css';
 
 const slogans = [
@@ -9,6 +10,7 @@ const slogans = [
 
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const navigate = useNavigate(); // hook for navigation
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -16,6 +18,10 @@ const Hero = () => {
     }, 3000);
     return () => clearInterval(timer);
   }, []);
+
+  const handleLearnMore = () => {
+    navigate('/about'); // redirects to About page
+  };
 
   return (
     <section className="hero-section">
@@ -34,7 +40,11 @@ const Hero = () => {
         <p key={currentIndex} className="hero-subtext animate__animated animate__fadeInUp hero-slogan">
           {slogans[currentIndex]}
         </p>
-        <button className="hero-btn animate__animated animate__fadeInUp">
+
+        <button 
+          className="hero-btn animate__animated animate__fadeInUp"
+          onClick={handleLearnMore}
+        >
           Learn More
         </button>
       </div>

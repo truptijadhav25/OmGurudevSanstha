@@ -8,7 +8,6 @@ import Projects from '../components/Projects';
 import Impact from '../components/Impact';
 import Team from '../components/Team';
 import Partners from '../components/Partners';
-import Testimonials from '../components/Testimonials';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 
@@ -53,7 +52,6 @@ const Home = () => {
       <Impact />
       <Team />
       <Partners />
-      <Testimonials />
       <Contact />
 
     </>

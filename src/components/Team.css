@@ -1,127 +1,148 @@
 .team-section {
-  padding: 120px 20px 70px; /* Increased top padding */
+  padding: 100px 20px 70px;
   text-align: center;
-  background: linear-gradient(135deg, #f8fbff, #eef5ff);
+  background: linear-gradient(135deg, #f9fcff, #eef5ff);
+  overflow: hidden;
 }
 
-/* Stylish Heading */
+/* Title with gradient shine */
 .team-title {
   font-size: 3rem;
   font-weight: 900;
   margin-bottom: 15px;
-  text-align: center;
-  background: linear-gradient(135deg, #1e3c72, #2a5298, #42a5f5);
+  background: linear-gradient(270deg, #1e3c72, #42a5f5, #ff758c, #1e3c72);
+  background-size: 600% 600%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: gradientShift 6s ease infinite;
   letter-spacing: 2px;
   position: relative;
   display: inline-block;
 }
 
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 .team-title::after {
   content: "";
   display: block;
-  width: 90px;
+  width: 100px;
   height: 4px;
-  background: linear-gradient(135deg, #ff7eb3, #ff758c, #42a5f5);
+  background: linear-gradient(90deg, #ff7eb3, #42a5f5, #7efff5);
   margin: 12px auto 0;
   border-radius: 3px;
 }
 
 /* Subtitle */
 .team-subtitle {
-  font-size: 1.25rem;
-  font-weight: 500;
+  font-size: 1.2rem;
   color: #4b5563;
-  margin-bottom: 55px;
+  margin-bottom: 60px;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
   line-height: 1.6;
+  opacity: 0.9;
 }
 
 /* Grid Layout */
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Always 2 per row */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 45px;
-  max-width: 1000px;
+  max-width: 1100px;
   margin: auto;
-}
-
-@media (max-width: 768px) {
-  .team-grid {
-    grid-template-columns: 1fr; /* On mobile: single column */
-  }
 }
 
 /* Card Design */
 .team-card {
   background: white;
-  border-radius: 28px;
+  border-radius: 24px;
   padding: 35px 25px;
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
-  transition: all 0.35s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  animation: fadeUp 0.7s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
 .team-card:hover {
-  transform: translateY(-12px) scale(1.02);
-  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.15);
-}
-
-/* Profile Image */
-.team-img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 25px;
-  border: 7px solid transparent;
+  transform: translateY(-12px) scale(1.04);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  border: 2px solid transparent;
   background-image: linear-gradient(white, white),
-    linear-gradient(135deg, #ff7eb3, #ff758c, #42a5f5, #478ed1);
+    linear-gradient(135deg, #42a5f5, #7efff5, #ff758c);
   background-origin: border-box;
   background-clip: content-box, border-box;
 }
 
+/* Profile Image with glow effect */
+.team-img-wrapper {
+  border-radius: 50%;
+  padding: 6px;
+  background: linear-gradient(135deg, #42a5f5, #ff7eb3, #7efff5);
+  margin-bottom: 20px;
+  transition: transform 0.4s ease;
+}
+
+.team-card:hover .team-img-wrapper {
+  transform: rotate(5deg) scale(1.07);
+}
+
+.team-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #fff;
+}
+
 /* Name */
 .team-info h3 {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 800;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   color: #111827;
-  letter-spacing: 0.5px;
 }
 
 /* Role */
 .team-role {
-  font-size: 1.15rem;
+  font-size: 1rem;
   font-weight: 700;
   color: #f97316;
-  margin-bottom: 18px;
+  margin-bottom: 15px;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
 /* Bio */
 .team-bio {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #374151;
-  line-height: 1.75;
-  margin-bottom: 22px;
-  padding: 0 15px;
+  line-height: 1.6;
+  margin-bottom: 18px;
+  padding: 0 10px;
 }
 
 /* LinkedIn */
 .linkedin-link {
-  font-size: 1.7rem;
+  font-size: 1.8rem;
   color: #0a66c2;
   transition: all 0.3s ease;
 }
 
 .linkedin-link:hover {
   color: #0059b2;
-  transform: scale(1.25);
+  transform: scale(1.25) rotate(8deg);
 }

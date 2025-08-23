@@ -34,7 +34,7 @@ const impactData = [
   },
 ];
 
-// Running Counter Component with framer-motion animate
+// Counter animation
 const Counter = ({ to, duration = 2, suffix = "" }) => {
   const nodeRef = useRef();
   const [hasAnimated, setHasAnimated] = useState(false);
@@ -58,7 +58,7 @@ const Counter = ({ to, duration = 2, suffix = "" }) => {
     }
   }, [isInView, to, duration, suffix, hasAnimated]);
 
-  return <span ref={nodeRef}>0{suffix}</span>;
+  return <span ref={nodeRef} className="glow-counter">0{suffix}</span>;
 };
 
 const Impact = () => (
@@ -73,13 +73,23 @@ const Impact = () => (
         <motion.div
           key={index}
           className="impact-card"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 60, rotate: 5 }}
+          whileInView={{ opacity: 1, y: 0, rotate: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: index * 0.2 }}
-          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.6, delay: index * 0.2 }}
+          whileHover={{ scale: 1.07, rotate: -1 }}
         >
-          <div className="impact-icon">{item.icon}</div>
+          <motion.div
+            className="impact-icon"
+            whileHover={{
+              scale: 1.2,
+              rotate: 12,
+              boxShadow: "0 0 25px rgba(0,255,180,0.6)",
+            }}
+            transition={{ duration: 0.4 }}
+          >
+            {item.icon}
+          </motion.div>
           <h3 className="impact-title">{item.title}</h3>
           <p className="impact-stat">
             <Counter to={item.stat} suffix={item.suffix} duration={2} />

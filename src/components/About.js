@@ -41,9 +41,17 @@ const About = () => {
               <p>
                 We believe in inclusive growth and long-term sustainable development by empowering individuals and fostering community engagement. Our initiatives reach remote areas to ensure no one is left behind.
               </p>
-              <a href="#contact" className="btn btn-primary mt-3">
+              <button
+                className="btn btn-primary mt-3"
+                onClick={() => {
+                  const contactSection = document.getElementById("contact");
+                  if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+              >
                 {t ? t("about.joinUs") : "Join Us"}
-              </a>
+              </button>
             </div>
           </div>
         </div>

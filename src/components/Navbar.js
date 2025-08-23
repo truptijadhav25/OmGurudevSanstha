@@ -70,11 +70,7 @@ const Navbar = () => {
                 {t('navbar.partners')}
               </NavLink>
             </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/testimonials" onClick={closeMenu}>
-                {t('navbar.testimonials')}
-              </NavLink>
-            </li>
+
             <li className="nav-item">
               <NavLink className="nav-link" to="/help" onClick={closeMenu}>
                 {t('navbar.help')}

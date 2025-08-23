@@ -13,7 +13,7 @@ import Projects from './components/Projects';
 import Impact from './components/Impact';
 import Team from './components/Team';
 import Partners from './components/Partners';
-import Testimonials from './components/Testimonials';
+
 import Help from './components/Help';
 
 function App() {
@@ -28,7 +28,6 @@ function App() {
         <Route path="/impact" element={<Impact />} />
         <Route path="/team" element={<Team />} />
         <Route path="/partners" element={<Partners />} />
-        <Route path="/testimonials" element={<Testimonials />} />
         <Route path="/help" element={<Help />} />
       </Routes>
       <Footer />

@@ -1,3 +1,4 @@
+/* Hero Section */
 .hero-section {
   background: url('/public/hero.jpg') no-repeat center center/cover;
   color: #fff;
@@ -5,61 +6,142 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
+  flex-direction: column;
   text-align: center;
+  position: relative;
   padding: 0 20px;
-  padding-top: 50px; /* space for notification banner */
+  padding-top: 70px; /* space for banner */
+  overflow: hidden;
 }
 
+/* Gradient overlay with subtle animation */
 .hero-section::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4); /* Light black overlay for readability */
+  background: linear-gradient(
+    135deg,
+    rgba(43, 88, 118, 0.7),
+    rgba(78, 67, 118, 0.7)
+  );
+  animation: gradientMove 10s ease-in-out infinite alternate;
   z-index: 0;
+}
+
+@keyframes gradientMove {
+  0% {
+    background: linear-gradient(
+      135deg,
+      rgba(43, 88, 118, 0.7),
+      rgba(78, 67, 118, 0.7)
+    );
+  }
+  100% {
+    background: linear-gradient(
+      135deg,
+      rgba(229, 46, 113, 0.6),
+      rgba(255, 138, 0, 0.6)
+    );
+  }
 }
 
 .hero-section > div {
   z-index: 1;
 }
 
+/* Title */
 .hero-section h1 {
   font-size: 4rem;
-  font-weight: bold;
+  font-weight: 800;
   margin-bottom: 20px;
+  animation: fadeInDown 1.2s ease-in-out;
 }
 
-.hero-section p {
-  font-size: 1.60rem;
-  max-width: 800px;
-  margin: auto;
-}
-
-/* Running slogan fade-in */
-.hero-slogan {
-  opacity: 0;
-  animation: fadeIn 1s forwards;
-}
-
-@keyframes fadeIn {
-  to {
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+  100% {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
+/* Subtitle */
+.hero-section p {
+  font-size: 1.8rem;
+  font-weight: 400;
+  max-width: 800px;
+  margin: auto;
+  line-height: 1.6;
+  animation: fadeInUp 1.2s ease-in-out;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slogan text with color animation */
+.hero-slogan {
+  margin-top: 15px;
+  font-size: 2rem;
+  font-weight: bold;
+  animation: colorChange 5s infinite alternate;
+}
+
+@keyframes colorChange {
+  0% { color: #ff8a00; }
+  25% { color: #e52e71; }
+  50% { color: #4facfe; }
+  75% { color: #43e97b; }
+  100% { color: #f9d423; }
+}
+
+/* Button */
+.hero-btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 16px 42px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(229, 46, 113, 0.5);
+  transition: all 0.4s ease-in-out;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 30px rgba(229, 46, 113, 0.7);
+  background: linear-gradient(90deg, #43e97b, #38f9d7);
+}
+
+/* Notification Banner */
 .notification-banner.hero-banner {
   background: linear-gradient(90deg, #ff8a00, #e52e71);
   color: white;
-  font-weight: 1000;          /* bolder font */
-  font-size: 1.9rem;          /* bigger text */
+  font-weight: 900;
+  font-size: 1.9rem;
   box-shadow: 0 6px 16px rgba(229, 46, 113, 0.4);
   border-radius: 10px;
   margin: 24px auto 36px auto;
   position: relative;
   overflow: hidden;
   width: 95vw;
-  max-width: 1010px;
-  height: 3rem;               /* taller banner */
+  max-width: 1000px;
+  height: 3rem;
   padding-top: 0.25rem;
 }
 
@@ -69,7 +151,7 @@
   position: absolute;
   animation: scrollLeft 12s linear infinite;
   top: 50%;
-  transform: translateY(-50%);   /* vertically center */
+  transform: translateY(-50%);
 }
 
 @keyframes scrollLeft {
@@ -78,5 +160,32 @@
   }
   100% {
     transform: translateX(-100%) translateY(-50%);
+  }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .hero-section h1 {
+    font-size: 3rem;
+  }
+  .hero-section p {
+    font-size: 1.4rem;
+  }
+  .hero-btn {
+    font-size: 1.3rem;
+    padding: 14px 34px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-section h1 {
+    font-size: 2.4rem;
+  }
+  .hero-section p {
+    font-size: 1.2rem;
+  }
+  .hero-btn {
+    font-size: 1.1rem;
+    padding: 12px 28px;
   }
 }
