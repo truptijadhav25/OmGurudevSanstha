@@ -11,18 +11,19 @@ const Navbar = () => {
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav className="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
       <div className="container">
+        {/* Brand / Logo */}
         <NavLink className="navbar-brand d-flex align-items-center" to="/" onClick={closeMenu}>
           <img
             src={`${process.env.PUBLIC_URL}/logo.jpg`}
             alt="Logo"
             className="logo-img me-2"
-            style={{ height: '40px', width: '40px', borderRadius: '50%' }}
           />
-          <span>OM GURUDEV SANSTHA</span>
+          <span className="brand-text">OM GURUDEV SANSTHA</span>
         </NavLink>
 
+        {/* Toggler */}
         <button
           className="navbar-toggler"
           type="button"
@@ -33,6 +34,7 @@ const Navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
 
+        {/* Menu */}
         <div className={`collapse navbar-collapse ${isMenuOpen ? 'show' : ''}`} id="navbarNav">
           <ul className="navbar-nav ms-auto align-items-lg-center">
             <li className="nav-item">

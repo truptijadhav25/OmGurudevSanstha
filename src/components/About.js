@@ -16,7 +16,6 @@ const About = () => {
     <section className="about-section" id="about">
       <div className="container py-5">
         <h2 className="section-title text-center" data-aos="fade-down">
-          {/* Use translation or static text */}
           {t ? t("about.title") : "About Om Gurudev NGO"}
         </h2>
         <p className="section-subtitle text-center mb-5" data-aos="fade-up">
@@ -83,6 +82,34 @@ const About = () => {
               <i className="bi bi-heart-fill icon"></i>
               <h5>{t ? t("about.values") : "Values"}</h5>
               <p>{t ? t("about.valuesText") : "Integrity, Equality, Compassion, Community, Sustainability"}</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Certificates Section */}
+        <div className="certificates-section mt-5">
+          <h3 className="text-center mb-4" data-aos="fade-down">
+            {t ? t("about.certificates") : "Our Certificates"}
+          </h3>
+          <div className="row justify-content-center">
+            <div className="col-md-6 col-lg-4" data-aos="zoom-in">
+              <div className="certificate-card shadow-lg p-3 rounded">
+                <img
+                  src={`${process.env.PUBLIC_URL}/certificate.png`}
+                  alt="Certificate"
+                  className="img-fluid rounded certificate-img"
+                />
+                <div className="text-center mt-3">
+                  <a
+                    href={`${process.env.PUBLIC_URL}/certificate.pdf`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-outline-primary"
+                  >
+                    View Certificate
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>

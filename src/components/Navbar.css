@@ -1,67 +1,85 @@
 /* Logo Styling */
 .logo-img {
-  height: 45px;
-  width: auto;
+  height: 65px;
+  width: 65px;
   border-radius: 50%;
   background-color: white;
   padding: 4px;
   object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Custom Navbar Background */
-.custom-navbar {
-  background: linear-gradient(135deg, #004e92, #000428); /* same as navbar */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  font-family: "Poppins", sans-serif;
+.logo-img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 12px rgba(255, 193, 7, 0.7);
 }
 
-/* Navbar Styling */
-.navbar {
-  background: linear-gradient(135deg, #004e92, #000428); /* same as navbar */
-  transition: background-color 0.3s ease;
-}
-
-/* Navbar Brand */
-.navbar-brand {
+/* Brand Text */
+.brand-text {
   font-weight: 700;
-  font-size: 1.2rem;
-  color: #ffffff !important;
-  letter-spacing: 0.5px;
+  font-size: 1.3rem;
+  color: #ffffff;
+  letter-spacing: 0.7px;
+  transition: color 0.3s ease;
 }
 
-/* Nav Link Styling */
+.brand-text:hover {
+  color: #ffc107;
+}
+
+/* Navbar Background */
+.custom-navbar {
+  background: linear-gradient(135deg, #004e92, #000428);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease;
+}
+
+/* Nav Links */
 .nav-link {
   font-weight: 500;
   font-size: 1rem;
-  color: #e5e7eb !important; /* light gray */
+  color: #e5e7eb !important;
   margin-left: 18px;
-  transition: color 0.3s ease, border-bottom 0.3s ease;
   position: relative;
+  transition: color 0.3s ease;
 }
 
-/* Hover Effect */
+/* Hover effect underline */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #ffc107;
+  left: 0;
+  bottom: -4px;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
 .nav-link:hover {
-  color: #ffc107; /* golden hover */
+  color: #ffc107 !important;
 }
 
-/* Active Link Highlight */
+/* Active Link */
 .nav-link.active {
   color: #ffc107 !important;
   font-weight: 600;
-  border-bottom: 2px solid #ffc107;
 }
 
-/* Mobile Navbar */
 .navbar-toggler {
   border: none;
 }
 
 .navbar-toggler-icon {
-  filter: invert(100%); /* makes toggler white */
+  filter: invert(100%);
 }
 
-/* Language switcher */
+/* Language Switcher */
 .lang-switch {
   min-width: 90px;
   background: rgba(255,255,255,0.12);
@@ -73,4 +91,18 @@
 
 .lang-switch option {
   color: #000;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 992px) {
+  .nav-link {
+    margin-left: 0;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  .lang-switch {
+    margin-top: 10px;
+    width: 100%;
+  }
 }

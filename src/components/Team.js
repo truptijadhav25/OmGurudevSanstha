@@ -1,38 +1,68 @@
 import React from 'react';
 import './Team.css';
-import { FaLinkedin } from 'react-icons/fa';
+import { FaLinkedin, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 const teamMembers = [
   {
     name: 'Smt. Priti Engle',
     role: 'President',
     image: '/priti ingle.jpg',
-    bio: "Founder of an NGO dedicated to social upliftment and rural development. Over a decade of service leading educational programs, women's empowerment initiatives, and community health projects"
+    bio: "Founder of an NGO dedicated to social upliftment and rural development. Over a decade of service leading educational programs, women's empowerment initiatives, and community health projects",
+    linkedin: "#",
+    twitter: "#",
+    instagram: "#"
   },
   {
     name: 'Shree. Ankush Sapkal',
     role: 'Vice President',
     image: '/ankush sapkal.jpg',
-    bio: 'Leader in digital transformation and education with impact in the IT industry. Helps students secure IT and cybersecurity careers through training programs and mentorship. Successfully placed hundreds of students by building industry-academia partnerships.'
+    bio: 'Leader in digital transformation and education with impact in the IT industry. Helps students secure IT and cybersecurity careers through training programs and mentorship.',
+    linkedin: "#",
+    twitter: "#",
+    instagram: "#"
   },
   {
     name: 'Dr. Dilip Pawar',
     role: 'Secretary',
     image: '/dilip pawar.jpg',
-    bio: 'Drives operations and coordinates stakeholders for effective program execution. Made significant impact in education through innovative learning programs and in finance through microfinance solutions for underserved communities.'
+    bio: 'Drives operations and coordinates stakeholders for effective program execution. Made significant impact in education and microfinance solutions for underserved communities.',
+    linkedin: "#"
   },
   {
     name: 'Shree. Rama Engle',
     role: 'Joint Secretary',
-    image: '/rama ingle.jpg',
-    bio: 'Experienced advocate and astrology expert with significant impact in the legal and spiritual guidance sectors. Provides legal counsel while helping individuals find their correct life path through astrological insights and spiritual guidance.'
+    image: '/rama_ingle.jpg',
+    bio: 'Experienced advocate and astrology expert with significant impact in legal and spiritual guidance.',
+    linkedin: "#"
+  },
+  {
+    name: 'Smt. Dipali Dilip Pawar',
+    role: 'Treasurer',
+    image: '/dipali_paar.jpg',
+    bio: 'Over 9 years in the financial and banking sector, actively involved in social work and community development, ensuring transparent financial planning.',
+    linkedin: "#"
+  },
+  {
+    name: 'Smt. Renuka Sapkal',
+    role: 'Team Member',
+    image: '/Renuka_sapkal.jpg',
+    bio: 'Guides job seekers in IT industry skill growth and career sustainability.',
+    linkedin: "#"
+  },
+  {
+    name: 'Shree Kakasaheb Pawar',
+    role: 'Team Member',
+    image: '/kakasaheb_pawar.jpg',
+    bio: 'Supports social initiatives and contributes to sustainable rural development.',
+    linkedin: "#"
   }
 ];
 
 const Team = () => {
   return (
     <section className="team-section">
-      <h2 className="team-title">Meet Our Team</h2>
+      <div className="sparkle-bg"></div>
+      <h2 className="team-title">✨ Meet Our Team ✨</h2>
       <p className="team-subtitle">
         Our leadership brings experience, passion, and community-first values.
       </p>
@@ -43,23 +73,32 @@ const Team = () => {
             key={index}
             style={{ animationDelay: `${index * 0.2}s` }}
           >
-            <div className="team-img-wrapper">
+            <div className="team-img-wrapper floating">
               <img src={member.image} alt={member.name} className="team-img" />
             </div>
             <div className="team-info">
               <h3>{member.name}</h3>
-              <p className="team-role">{member.role}</p>
+              <p className={`team-role role-${member.role.replace(/\s+/g, '').toLowerCase()}`}>
+                {member.role}
+              </p>
               <p className="team-bio">{member.bio}</p>
-              {member.linkedin && (
-                <a
-                  href={member.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="linkedin-link"
-                >
-                  <FaLinkedin />
-                </a>
-              )}
+              <div className="social-links">
+                {member.linkedin && (
+                  <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
+                    <FaLinkedin />
+                  </a>
+                )}
+                {member.twitter && (
+                  <a href={member.twitter} target="_blank" rel="noopener noreferrer">
+                    <FaTwitter />
+                  </a>
+                )}
+                {member.instagram && (
+                  <a href={member.instagram} target="_blank" rel="noopener noreferrer">
+                    <FaInstagram />
+                  </a>
+                )}
+              </div>
             </div>
           </div>
         ))}

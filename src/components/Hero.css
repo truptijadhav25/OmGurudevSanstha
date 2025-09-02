@@ -1,8 +1,68 @@
-/* Hero Section */
+/* ================= LOGO CONTAINER ================= */
+.hero-logo-container {
+  margin-top: 90px; /* pushes logo below navbar */
+  margin-bottom: 50px; /* extra space below logo */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+}
+
+/* Main Logo */
+.hero-logo {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #fff;
+  padding: 12px;
+  position: relative;
+  z-index: 3;
+  animation: floatLogo 4s ease-in-out infinite;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+/* Gradient Ring Behind Logo */
+.hero-logo-container::before {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: conic-gradient(#ff6b6b, #f9ca24, #6a89cc, #78e08f, #ff6b6b);
+  animation: rotateRing 8s linear infinite;
+  filter: blur(2px);
+  z-index: 1;
+}
+
+/* Floating Logo Animation */
+@keyframes floatLogo {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Rotating Gradient Ring */
+@keyframes rotateRing {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Logo */
+@media (max-width: 768px) {
+  .hero-logo {
+    width: 100px;
+    height: 100px;
+  }
+  .hero-logo-container::before {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+/* ================= HERO SECTION ================= */
 .hero-section {
-  background: url('/public/hero.jpg') no-repeat center center/cover;
   color: #fff;
-  height: 100vh;
+  min-height: 100vh; /* allows section to expand */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -89,26 +149,28 @@
   }
 }
 
-/* Slogan text with color animation */
+/* ================= SLOGANS ================= */
 .hero-slogan {
-  margin-top: 15px;
-  font-size: 2rem;
-  font-weight: bold;
-  animation: colorChange 5s infinite alternate;
+  margin-top: 20px;
+  font-size: 4.6rem;
+  font-weight: 900;
+  font-family: 'Poppins', sans-serif;
+  animation: colorChange 6s infinite alternate;
 }
 
 @keyframes colorChange {
   0% { color: #ff8a00; }
-  25% { color: #e52e71; }
-  50% { color: #4facfe; }
-  75% { color: #43e97b; }
-  100% { color: #f9d423; }
+  20% { color: #e52e71; }
+  40% { color: #4facfe; }
+  60% { color: #43e97b; }
+  80% { color: #f9d423; }
+  100% { color: #ff6b6b; }
 }
 
-/* Button */
+/* ================= DONATE BUTTON ================= */
 .hero-btn {
   display: inline-block;
-  margin-top: 30px;
+  margin-top: 60px; /* more breathing room */
   padding: 16px 42px;
   font-size: 1.5rem;
   font-weight: bold;
@@ -120,6 +182,7 @@
   transition: all 0.4s ease-in-out;
   position: relative;
   z-index: 1;
+  animation: pulseBtn 2.5s infinite; /* gentle pulse */
 }
 
 .hero-btn:hover {
@@ -128,12 +191,19 @@
   background: linear-gradient(90deg, #43e97b, #38f9d7);
 }
 
-/* Notification Banner */
+/* Pulse animation */
+@keyframes pulseBtn {
+  0% { box-shadow: 0 0 0 0 rgba(229,46,113,0.6); }
+  70% { box-shadow: 0 0 0 20px rgba(229,46,113,0); }
+  100% { box-shadow: 0 0 0 0 rgba(229,46,113,0); }
+}
+
+/* ================= NOTIFICATION BANNER ================= */
 .notification-banner.hero-banner {
   background: linear-gradient(90deg, #ff8a00, #e52e71);
   color: white;
   font-weight: 900;
-  font-size: 1.9rem;
+  font-size: 1.7rem;
   box-shadow: 0 6px 16px rgba(229, 46, 113, 0.4);
   border-radius: 10px;
   margin: 24px auto 36px auto;
@@ -142,28 +212,28 @@
   width: 95vw;
   max-width: 1000px;
   height: 3rem;
-  padding-top: 0.25rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Continuous Marquee with duplicate messages */
+.marquee {
+  display: flex;
+  animation: marqueeScroll 35s linear infinite; /* slower scroll */
+  width: max-content;
 }
 
 .scrolling-text {
-  display: inline-block;
+  padding-right: 80px;
   white-space: nowrap;
-  position: absolute;
-  animation: scrollLeft 12s linear infinite;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
-@keyframes scrollLeft {
-  0% {
-    transform: translateX(100%) translateY(-50%);
-  }
-  100% {
-    transform: translateX(-100%) translateY(-50%);
-  }
+@keyframes marqueeScroll {
+  from { transform: translateX(0%); }
+  to { transform: translateX(-50%); }
 }
 
-/* Responsive */
+/* ================= RESPONSIVENESS ================= */
 @media (max-width: 992px) {
   .hero-section h1 {
     font-size: 3rem;
@@ -174,6 +244,17 @@
   .hero-btn {
     font-size: 1.3rem;
     padding: 14px 34px;
+    margin-top: 50px;
+  }
+  .notification-banner.hero-banner {
+    font-size: 1.4rem;
+    height: 2.5rem;
+  }
+  .hero-slogan {
+    font-size: 2rem;
+  }
+  .hero-logo-container {
+    margin-bottom: 40px;
   }
 }
 
@@ -187,5 +268,16 @@
   .hero-btn {
     font-size: 1.1rem;
     padding: 12px 28px;
+    margin-top: 40px;
+  }
+  .notification-banner.hero-banner {
+    font-size: 1.1rem;
+    height: 2.2rem;
+  }
+  .hero-slogan {
+    font-size: 1.6rem;
+  }
+  .hero-logo-container {
+    margin-bottom: 30px;
   }
 }

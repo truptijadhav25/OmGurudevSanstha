@@ -142,8 +142,9 @@ const Help = () => {
             <strong>Account Name:</strong> Om Gurudev Bahuudeshiya Sevabhavi Sanstha
           </p>
           <p>
-            <strong>Branch:</strong> Amthana, Taluka Sillod, District Chhatrapati
-            Sambhajinagar
+            <strong>Branch:</strong> 00196 Chikalthana, DAHIHANDE BLDG Ahillyabai Holkar Chouck Chikhaltana <br></br>
+            District Chhatrapati
+            Sambhajinagar 431201
           </p>
           <p>
             <strong>Account Number:</strong> 60544638141
@@ -161,6 +162,7 @@ const Help = () => {
             📍 Address: Ho No 30 Rashtramata jijau housing society Sawangi
             (Harsul), Chhatrapati Sambhajinagar, Maharashtra 431008
           </p>
+          <b>Office Number - 9112401041</b>
           <div className="social-links">
             <a href="#">
               <FaFacebook />
