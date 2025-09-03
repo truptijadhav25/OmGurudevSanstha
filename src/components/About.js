@@ -96,7 +96,7 @@ const About = () => {
             <div className="col-md-8" data-aos="zoom-in">
               <div className="certificate-card shadow-lg p-4 rounded text-center">
                 <img
-                  src={`${process.env.PUBLIC_URL}/Certificate.png`}
+                  src={`${process.env.PUBLIC_URL}/certificate.png`}
                   alt="NGO Certificate"
                   className="img-fluid certificate-img"
                 />
