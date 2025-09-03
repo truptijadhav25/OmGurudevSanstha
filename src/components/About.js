@@ -87,28 +87,19 @@ const About = () => {
         </div>
 
         {/* Certificates Section */}
+        {/* Certificates Section */}
         <div className="certificates-section mt-5">
           <h3 className="text-center mb-4" data-aos="fade-down">
-            {t ? t("about.certificates") : "Our Certificates"}
+            Our Certification
           </h3>
           <div className="row justify-content-center">
-            <div className="col-md-6 col-lg-4" data-aos="zoom-in">
-              <div className="certificate-card shadow-lg p-3 rounded">
+            <div className="col-md-8" data-aos="zoom-in">
+              <div className="certificate-card shadow-lg p-4 rounded text-center">
                 <img
-                  src={`${process.env.PUBLIC_URL}/certificate.png`}
-                  alt="Certificate"
-                  className="img-fluid rounded certificate-img"
+                  src={`${process.env.PUBLIC_URL}/Certificate.png`}
+                  alt="NGO Certificate"
+                  className="img-fluid certificate-img"
                 />
-                <div className="text-center mt-3">
-                  <a
-                    href={`${process.env.PUBLIC_URL}/certificate.pdf`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-outline-primary"
-                  >
-                    View Certificate
-                  </a>
-                </div>
               </div>
             </div>
           </div>
