@@ -32,7 +32,7 @@ const partnersData = [
 
 const Partners = () => {
   return (
-    <section className="partners-section py-5">
+    <section id="partners" className="partners-section py-5">
       <div className="container text-center">
         <h2 className="section-title mb-3">Our Core Partners</h2>
         <p className="section-subtitle mb-5">
@@ -44,9 +44,16 @@ const Partners = () => {
               className="col-sm-10 col-md-6 col-lg-4 col-xl-3 mb-4"
               key={index}
             >
-              <div className="partner-card h-100 fade-in" style={{ animationDelay: `${index * 0.2}s` }}>
+              <div
+                className="partner-card h-100 fade-in"
+                style={{ animationDelay: `${index * 0.2}s` }}
+              >
                 <div className="card-body text-center">
-                  <img src={partner.logo} alt={partner.name} className="partner-logo mb-3" />
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    className="partner-logo mb-3"
+                  />
                   <h5 className="card-title">{partner.name}</h5>
                   <span className="partner-type mb-2">{partner.type}</span>
                   <p className="card-text">{partner.description}</p>

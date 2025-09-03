@@ -1,10 +1,13 @@
 .partners-section {
   position: relative;
   background: linear-gradient(135deg, #f0f7ff, #ffffff);
-  padding: 100px 0;
+  padding: 100px 0; /* keep existing padding */
   font-family: 'Poppins', sans-serif;
   overflow: hidden;
+  scroll-margin-top: 90px; /* 👈 pushes down section when scrolling via navbar */
+  margin-top: 90px; /* 👈 ensures it's always below navbar */
 }
+
 
 /* Animated Background */
 .partners-section::before {
