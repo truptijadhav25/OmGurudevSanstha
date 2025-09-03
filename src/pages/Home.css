@@ -1,3 +1,8 @@
+
+/* Fix for fixed-top navbar */
+body {
+  padding-top: 90px;  /* adjust this number if your navbar is taller/shorter */
+}
 /* General layout */
 .home-section {
   position: relative;
