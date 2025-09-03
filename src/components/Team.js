@@ -46,14 +46,14 @@ const teamMembers = [
     name: 'Smt. Renuka Sapkal',
     role: 'Team Member',
     image: '/Renuka_sapkal.jpg',
-    bio: 'Guides job seekers in IT industry skill growth and career sustainability.',
+    bio: 'Renuka Sapkal is an experienced professional committed to supporting individuals in the IT industry. She actively guides job seekers in enhancing their skills, preparing for opportunities, and achieving sustainable career growth. Her expertise and dedication to empowering people make her a valuable addition to the NGO body.',
     linkedin: "#"
   },
   {
     name: 'Shree Kakasaheb Pawar',
     role: 'Team Member',
     image: '/kakasaheb_pawar.jpg',
-    bio: 'Supports social initiatives and contributes to sustainable rural development.',
+    bio: 'Kakasaheb Pawar has been actively contributing to the field of education by supporting various initiatives aimed at improving learning opportunities. His dedication to empowering students and creating awareness about the importance of education makes him a valuable member of the NGO body.',
     linkedin: "#"
   }
 ];
