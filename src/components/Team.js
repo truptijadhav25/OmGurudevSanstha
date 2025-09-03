@@ -45,7 +45,7 @@ const teamMembers = [
   {
     name: 'Smt. Renuka Sapkal',
     role: 'Team Member',
-    image: '/Renuka_sapkal.jpg',
+    image: '/Renuka_Sapkal.jpg',
     bio: 'Renuka Sapkal is an experienced professional committed to supporting individuals in the IT industry. She actively guides job seekers in enhancing their skills, preparing for opportunities, and achieving sustainable career growth. Her expertise and dedication to empowering people make her a valuable addition to the NGO body.',
     linkedin: "#"
   },
