@@ -1,6 +1,7 @@
 import React from "react";
 import "./Footer.css";
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -24,10 +25,22 @@ const Footer = () => {
           <div className="col-md-4 footer-links center-links">
             <h5>Quick Links</h5>
             <ul>
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#focusareas">Focus Areas</a></li>
-              <li><a href="#projects">Projects</a></li>
-              <li><a href="#contact">Contact</a></li>
+               <li className="nav-item">
+              <NavLink className="nav-link" to="/about" onClick={closeMenu}>
+                {t('navbar.about')}
+              </NavLink>
+            </li>
+               <li className="nav-item">
+              <NavLink className="nav-link" to="/focus-areas" onClick={closeMenu}>
+                {t('navbar.focus')}
+              </NavLink>
+            </li>
+              <li className="nav-item">
+              <NavLink className="nav-link" to="/projects" onClick={closeMenu}>
+                {t('navbar.projects')}
+              </NavLink>
+            </li>
+              // <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
 
