@@ -3,27 +3,27 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/dom": "^10.4.1",
-    "@testing-library/jest-dom": "^6.6.4",
-    "@testing-library/react": "^16.3.0",
-    "@testing-library/user-event": "^13.5.0",
+    "@testing-library/dom": "^9.3.3",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^14.2.2",
+    "@testing-library/user-event": "^14.5.2",
     "ajv": "^6.12.6",
     "ajv-keywords": "^3.5.2",
     "animate.css": "^4.1.1",
     "aos": "^2.3.4",
     "bootstrap": "^5.3.7",
     "bootstrap-icons": "^1.13.1",
-    "framer-motion": "^12.23.12",
-    "i18next": "^25.3.6",
-    "i18next-browser-languagedetector": "^8.2.0",
-    "lucide-react": "^0.536.0",
+    "framer-motion": "^10.18.0",
+    "i18next": "22.5.1",
+    "i18next-browser-languagedetector": "^6.1.5",
+    "lucide-react": "^0.364.0",
     "qrcode.react": "^4.2.0",
-    "react": "^19.1.1",
-    "react-bootstrap": "^2.10.10",
-    "react-dom": "^19.1.1",
-    "react-i18next": "^15.6.1",
-    "react-icons": "^5.5.0",
-    "react-router-dom": "^7.7.1",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.9.0",
+    "react-dom": "^18.2.0",
+    "react-i18next": "12.3.1",
+    "react-icons": "^4.10.1",
+    "react-router-dom": "^6.14.2",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
@@ -51,7 +51,10 @@
       "last 1 safari version"
     ]
   },
+  "engines": {
+    "node": "18.x"
+  },
   "devDependencies": {
-    "typescript": "5.0.4"
+    "typescript": "4.9.5"
   }
 }
