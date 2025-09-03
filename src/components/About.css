@@ -193,28 +193,96 @@ html {
 /* Certificates Section */
 .certificates-section {
   text-align: center;
-  margin-top: 60px;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f9f9f9, #eef3f9);
 }
 
+.certificates-section h3 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #2c3e50;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  animation: fadeInDown 1s ease;
+}
+
+.certificates-section h3::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #0d6efd, #00c9ff);
+  margin: 8px auto 0;
+  border-radius: 3px;
+}
+
+/* Certificate Card */
 .certificate-card {
   background: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px auto;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.08);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
-  border-radius: 15px;
+  max-width: 900px;
 }
 
 .certificate-card:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-}
-
-.certificate-img {
-  max-height: 280px;
-  object-fit: contain;
-  border: 3px solid #f0f0f0;
-  border-radius: 12px;
-  transition: transform 0.4s ease;
-}
-
-.certificate-card:hover .certificate-img {
   transform: scale(1.05);
+  box-shadow: 0px 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Certificate Image */
+.certificate-img {
+  max-height: 550px;
+  width: 100%;
+  object-fit: contain;
+  border-radius: 15px;
+  border: 3px solid #e0e0e0;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.certificate-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0px 10px 25px rgba(13, 110, 253, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .certificates-section h3 {
+    font-size: 2rem;
+  }
+  .certificate-img {
+    max-height: 400px;
+  }
+}
+
+@media (max-width: 576px) {
+  .certificates-section {
+    padding: 50px 10px;
+  }
+  .certificates-section h3 {
+    font-size: 1.8rem;
+  }
+  .certificate-card {
+    padding: 15px;
+  }
+  .certificate-img {
+    max-height: 300px;
+  }
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
