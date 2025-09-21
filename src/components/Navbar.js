@@ -12,9 +12,13 @@ const Navbar = () => {
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
-      <div className="container">
+      <div className="container-fluid d-flex align-items-center justify-content-between">
         {/* Brand / Logo */}
-        <NavLink className="navbar-brand d-flex align-items-center" to="/" onClick={closeMenu}>
+        <NavLink
+          className="navbar-brand d-flex align-items-center"
+          to="/"
+          onClick={closeMenu}
+        >
           <img
             src={`${process.env.PUBLIC_URL}/logo.jpg`}
             alt="Logo"
@@ -23,19 +27,23 @@ const Navbar = () => {
           <span className="brand-text">OM GURUDEV SANSTHA</span>
         </NavLink>
 
-        {/* Toggler */}
+        {/* Toggler aligned right */}
         <button
-          className="navbar-toggler"
+          className="navbar-toggler ms-auto"
           type="button"
           onClick={toggleMenu}
           aria-controls="navbarNav"
           aria-expanded={isMenuOpen}
-          aria-label="Toggle navigation">
+          aria-label="Toggle navigation"
+        >
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        {/* Menu */}
-        <div className={`collapse navbar-collapse ${isMenuOpen ? 'show' : ''}`} id="navbarNav">
+        {/* Collapsible Menu */}
+        <div
+          className={`collapse navbar-collapse ${isMenuOpen ? 'show' : ''}`}
+          id="navbarNav"
+        >
           <ul className="navbar-nav ms-auto align-items-lg-center">
             <li className="nav-item">
               <NavLink className="nav-link" to="/" onClick={closeMenu} end>
@@ -72,7 +80,6 @@ const Navbar = () => {
                 {t('navbar.partners')}
               </NavLink>
             </li>
-
             <li className="nav-item">
               <NavLink className="nav-link" to="/help" onClick={closeMenu}>
                 {t('navbar.help')}

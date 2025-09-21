@@ -123,17 +123,20 @@
   line-height: 1.5;
 }
 
-/* Mobile carousel */
+/* Mobile vertical scroll only for Impact section */
 @media (max-width: 500px) {
-  .impact-grid {
-    display: flex;
-    gap: 1.2rem;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding-bottom: 0.7rem;
+  .impact-section {
+    max-height: 90vh;      /* section takes almost full screen height */
+    overflow-y: auto;      /* enable vertical scrolling */
+    padding-right: 0.5rem; /* avoid scrollbar overlap */
   }
+
+  .impact-grid {
+    grid-template-columns: 1fr; /* one card per row */
+    gap: 1rem;
+  }
+
   .impact-card {
-    min-width: 85vw;
-    scroll-snap-align: center;
+    min-width: 100%;
   }
 }
