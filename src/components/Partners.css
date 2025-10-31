@@ -1,15 +1,14 @@
 .partners-section {
   position: relative;
   background: linear-gradient(135deg, #f0f7ff, #ffffff);
-  padding: 100px 0; /* keep existing padding */
+  padding: 120px 0 100px 0; /* ⬆ More top padding for spacing below navbar */
   font-family: 'Poppins', sans-serif;
   overflow: hidden;
-  scroll-margin-top: 90px; /* 👈 pushes down section when scrolling via navbar */
-  margin-top: 90px; /* 👈 ensures it's always below navbar */
+  scroll-margin-top: 90px; /* Smooth navbar scroll offset */
+  margin-top: 90px;
 }
 
-
-/* Animated Background */
+/* ✨ Animated Gradient Background */
 .partners-section::before {
   content: "";
   position: absolute;
@@ -23,7 +22,7 @@
   to { transform: translateX(3%) translateY(2%); }
 }
 
-/* Floating circles for depth */
+/* Floating Circle for Depth */
 .partners-section::after {
   content: "";
   position: absolute;
@@ -40,26 +39,37 @@
   to { transform: translateY(20px); }
 }
 
-/* Section Title */
+/* 🌈 Section Title with Continuous Gradient Animation */
 .section-title {
   font-size: 2.8rem;
   font-weight: 700;
   text-transform: uppercase;
-  background: linear-gradient(270deg, #007cf0, #00dfd8, #42a5f5, #ff7eb3);
-  background-size: 400% 400%;
-  animation: gradientMove 8s ease infinite;
+  text-align: center;
+  background: linear-gradient(
+    270deg,
+    #007cf0,
+    #00dfd8,
+    #42a5f5,
+    #ff7eb3,
+    #f6d365,
+    #fda085
+  );
+  background-size: 600% 600%;
+  animation: gradientFlow 10s ease infinite;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 15px;
+  margin-top: 40px; /* Moves below navbar */
+  margin-bottom: 20px;
   position: relative;
   z-index: 2;
 }
-@keyframes gradientMove {
+@keyframes gradientFlow {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
+/* Subtitle */
 .section-subtitle {
   color: #555;
   font-size: 1.05rem;
@@ -68,9 +78,10 @@
   line-height: 1.6;
   z-index: 2;
   position: relative;
+  text-align: center;
 }
 
-/* Partner Card */
+/* 💎 Partner Card */
 .partner-card {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
@@ -96,7 +107,7 @@
   box-shadow: 0 20px 40px rgba(0, 124, 240, 0.25);
 }
 
-/* Gradient Border Effect */
+/* 🌈 Gradient Border Effect */
 .partner-card::before {
   content: "";
   position: absolute;
@@ -117,7 +128,7 @@
   opacity: 1;
 }
 
-/* Logo */
+/* 🌀 Logo */
 .partner-logo {
   max-width: 95px;
   height: auto;
@@ -128,7 +139,7 @@
   transform: scale(1.15) rotate(3deg);
 }
 
-/* Text */
+/* Texts */
 .card-title {
   font-size: 1.3rem;
   font-weight: 600;
@@ -165,7 +176,7 @@
   }
 }
 
-/* Responsive */
+/* 🌍 Responsive Design */
 @media (max-width: 992px) {
   .section-title { font-size: 2.4rem; }
 }

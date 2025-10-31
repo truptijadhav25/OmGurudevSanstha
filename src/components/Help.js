@@ -23,7 +23,6 @@ const Help = () => {
   const upiLink =
     "upi://pay?pa=omguruadev@upi&pn=Om%20Gurudev%20Sanstha&cu=INR";
 
-  // Animated counters
   const [families, setFamilies] = useState(0);
   const [children, setChildren] = useState(0);
   const [projects, setProjects] = useState(0);
@@ -44,12 +43,11 @@ const Help = () => {
 
   return (
     <div className="help-container">
-      {/* Floating Button */}
-      <a href="#donate" className="floating-donate-btn" data-aos="zoom-in">
+      <a href="#donate" className=" top-donate-btn floating-donate-btn" data-aos="zoom-in">
         ❤️ {t("help.donateNow")}
       </a>
 
-      {/* Hero Section */}
+      {/* HERO SECTION */}
       <section className="help-hero">
         <div className="help-hero-content" data-aos="fade-up">
           <h1>
@@ -71,7 +69,7 @@ const Help = () => {
         <div className="wave-divider"></div>
       </section>
 
-      {/* How You Can Help */}
+      {/* HOW YOU CAN HELP */}
       <section className="help-main">
         <h2 data-aos="fade-up">{t("help.howYouCanHelp")}</h2>
         <p className="subtitle" data-aos="fade-up">
@@ -118,7 +116,7 @@ const Help = () => {
         </div>
       </section>
 
-      {/* Donation + Bank + Contact */}
+      {/* DONATION, BANK TRANSFER, CONTACT */}
       <section className="quick-contact-section">
         <div className="quick-donation" data-aos="zoom-in">
           <h4>{t("help.quickDonation")}</h4>
@@ -138,45 +136,52 @@ const Help = () => {
           </div>
         </div>
 
-        <div className="bank-transfer" data-aos="zoom-in" data-aos-delay="200">
-          <h4>{t("help.bankTransfer")}</h4>
+        {/* BANK TRANSFER DETAILS */}
+        <div className="bank-details-card" data-aos="zoom-in" data-aos-delay="200">
+          <h4 className="bank-heading">{t("help.bankTransfer")}</h4>
           <p>
-            <strong>{t("help.accountName")}</strong>
+            <strong>{t("help.accountName")}:</strong>{" "}
+            <span>Om Gurudev Bahuudeshiya Sevabhavi Sanstha, Aurangabad</span>
           </p>
           <p>
-            <strong>{t("help.branch")}</strong>
+            <strong>{t("help.branch")}:</strong>{" "}
+            <span>Bank of Maharashtra, Garkheda Branch</span>
           </p>
           <p>
-            <strong>{t("help.accountNumber")}</strong>
+            <strong>{t("help.accountNumber")}:</strong>{" "}
+            <span>60248762543</span>
           </p>
           <p>
-            <strong>{t("help.ifscCode")}</strong>
+            <strong>{t("help.ifscCode")}:</strong>{" "}
+            <span>MAHB0000048</span>
           </p>
         </div>
 
-        <div className="contact-info" data-aos="zoom-in" data-aos-delay="400">
-          <h4>{t("help.contactUs")}</h4>
-          <p>{t("help.phone")}</p>
-          <p>{t("help.email")}</p>
-          <p>{t("help.address")}</p>
+        <div className="contact-section" data-aos="zoom-in" data-aos-delay="400">
+          <h4 className="contact-heading">{t("help.contactUs")}</h4>
+          <div className="contact-details">
+            <p> {t("help.phone")}</p>
+            <p> {t("help.email")}</p>
+            <p> {t("help.address")}</p>
+          </div>
           <div className="social-links">
-            <a href="#">
+            <a href="#" className="social-icon fb">
               <FaFacebook />
             </a>
-            <a href="#">
+            <a href="#" className="social-icon tw">
               <FaTwitter />
             </a>
-            <a href="#">
+            <a href="#" className="social-icon ig">
               <FaInstagram />
             </a>
-            <a href="#">
+            <a href="#" className="social-icon ln">
               <FaLinkedin />
             </a>
           </div>
         </div>
       </section>
 
-      {/* Impact Section */}
+      {/* IMPACT SECTION */}
       <section className="impact-section">
         <h2>{t("help.ourImpact")}</h2>
         <div className="impact-stats">

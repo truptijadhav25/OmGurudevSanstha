@@ -91,7 +91,7 @@ const Projects = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.2, duration: 0.6 }}
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.03 }}
           >
             <div className="img-wrapper">
               <img
