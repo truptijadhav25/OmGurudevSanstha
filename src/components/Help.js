@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./Help.css";
 import { QRCodeCanvas } from "qrcode.react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useTranslation } from "react-i18next";
 import {
   FaHandsHelping,
   FaDonate,
@@ -12,11 +15,13 @@ import {
   FaLinkedin,
   FaUsers,
   FaProjectDiagram,
-  FaChild
+  FaChild,
 } from "react-icons/fa";
 
 const Help = () => {
-  const upiLink = "upi://pay?pa=omguruadev@upi&pn=Om%20Gurudev%20Sanstha&cu=INR";
+  const { t } = useTranslation();
+  const upiLink =
+    "upi://pay?pa=omguruadev@upi&pn=Om%20Gurudev%20Sanstha&cu=INR";
 
   // Animated counters
   const [families, setFamilies] = useState(0);
@@ -24,6 +29,7 @@ const Help = () => {
   const [projects, setProjects] = useState(0);
 
   useEffect(() => {
+    AOS.init({ duration: 1200, once: true });
     let fam = 0,
       child = 0,
       proj = 0;
@@ -38,94 +44,90 @@ const Help = () => {
 
   return (
     <div className="help-container">
-      {/* Hero Banner */}
+      {/* Floating Button */}
+      <a href="#donate" className="floating-donate-btn" data-aos="zoom-in">
+        ❤️ {t("help.donateNow")}
+      </a>
+
+      {/* Hero Section */}
       <section className="help-hero">
-        <div className="help-hero-content">
-          <h1>Your Small Step Can Bring a Big Change</h1>
-          <p>
-            Join us in creating a brighter future for children, families, and
-            communities.
-          </p>
+        <div className="help-hero-content" data-aos="fade-up">
+          <h1>
+            {t("help.heroTitle1")}{" "}
+            <span className="highlight">{t("help.heroHighlight1")}</span>{" "}
+            {t("help.heroTitle2")}{" "}
+            <span className="highlight">{t("help.heroHighlight2")}</span>
+          </h1>
+          <p>{t("help.heroSubtitle")}</p>
           <div className="help-buttons">
             <a href="#donate" className="help-btn donate">
-              Donate Now
+              {t("help.donateNow")}
             </a>
             <a href="#volunteer" className="help-btn volunteer">
-              Become a Volunteer
+              {t("help.volunteerNow")}
             </a>
           </div>
         </div>
         <div className="wave-divider"></div>
       </section>
 
-      {/* Main Options */}
+      {/* How You Can Help */}
       <section className="help-main">
-        <h2>How You Can Help</h2>
-        <p className="subtitle">Join us in creating positive change</p>
+        <h2 data-aos="fade-up">{t("help.howYouCanHelp")}</h2>
+        <p className="subtitle" data-aos="fade-up">
+          {t("help.joinPositiveChange")}
+        </p>
 
         <div className="help-options">
-          <div className="help-card" id="volunteer" data-aos="fade-up">
+          <div className="help-card" id="volunteer" data-aos="zoom-in">
             <span className="badge">New</span>
             <FaHandsHelping className="icon" />
-            <h3>Volunteer with us</h3>
-            <p>
-              Join our team of dedicated volunteers and make a direct impact in
-              communities.
-            </p>
-            <button className="card-btn">Become a Volunteer</button>
+            <h3>{t("help.volunteerTitle")}</h3>
+            <p>{t("help.volunteerText")}</p>
+            <button className="card-btn">{t("help.volunteerNow")}</button>
           </div>
 
           <div
             className="help-card"
             id="donate"
-            data-aos="fade-up"
+            data-aos="zoom-in"
             data-aos-delay="200"
           >
             <FaDonate className="icon" />
-            <h3>Donate to support a cause</h3>
-            <p>
-              Make a difference with your contribution to our various programs and
-              initiatives.
-            </p>
+            <h3>{t("help.donateTitle")}</h3>
+            <p>{t("help.donateText")}</p>
             <div className="donate-buttons">
               <button className="card-btn">Donate ₹500</button>
               <button className="card-btn">Donate ₹1000</button>
             </div>
           </div>
 
-          <div className="help-card" data-aos="fade-up" data-aos-delay="400">
+          <div className="help-card" data-aos="zoom-in" data-aos-delay="400">
             <FaGift className="icon" />
-            <h3>In-Kind Support</h3>
-            <p>
-              Contribute resources like books, clothes, or equipment to support our
-              mission.
-            </p>
-            <button className="card-btn">Contribute Now</button>
+            <h3>{t("help.inkindTitle")}</h3>
+            <p>{t("help.inkindText")}</p>
+            <button className="card-btn">{t("help.inkindTitle")}</button>
           </div>
 
-          <div className="help-card" data-aos="fade-up" data-aos-delay="600">
+          <div className="help-card" data-aos="zoom-in" data-aos-delay="600">
             <FaBuilding className="icon" />
-            <h3>Partner for CSR or government schemes</h3>
-            <p>
-              Collaborate with us for meaningful CSR initiatives and social impact
-              programs.
-            </p>
-            <button className="card-btn">Partner with Us</button>
+            <h3>{t("help.partnerTitle")}</h3>
+            <p>{t("help.partnerText")}</p>
+            <button className="card-btn">{t("help.partnerTitle")}</button>
           </div>
         </div>
       </section>
 
-      {/* Donation + Bank Details + Contact */}
+      {/* Donation + Bank + Contact */}
       <section className="quick-contact-section">
         <div className="quick-donation" data-aos="zoom-in">
-          <h4>Quick Donation</h4>
-          <p>Scan the QR Code below to donate via UPI:</p>
+          <h4>{t("help.quickDonation")}</h4>
+          <p>{t("help.scanUPI")}</p>
           <QRCodeCanvas value={upiLink} size={180} />
           <p>
-            <strong>UPI ID:</strong> omguruadev@upi
+            <strong>{t("help.upiId")}</strong>
           </p>
 
-          {/* Progress bar */}
           <div className="progress-container">
             <p>Goal: ₹50,000</p>
             <div className="progress-bar">
@@ -137,32 +139,26 @@ const Help = () => {
         </div>
 
         <div className="bank-transfer" data-aos="zoom-in" data-aos-delay="200">
-          <h4>Bank Transfer Details</h4>
+          <h4>{t("help.bankTransfer")}</h4>
           <p>
-            <strong>Account Name:</strong> Om Gurudev Bahuudeshiya Sevabhavi Sanstha
+            <strong>{t("help.accountName")}</strong>
           </p>
           <p>
-            <strong>Branch:</strong> 00196 Chikalthana, DAHIHANDE BLDG Ahillyabai Holkar Chouck Chikhaltana <br></br>
-            District Chhatrapati
-            Sambhajinagar 431201
+            <strong>{t("help.branch")}</strong>
           </p>
           <p>
-            <strong>Account Number:</strong> 60544638141
+            <strong>{t("help.accountNumber")}</strong>
           </p>
           <p>
-            <strong>IFSC Code:</strong> MAHB0000196
+            <strong>{t("help.ifscCode")}</strong>
           </p>
         </div>
 
         <div className="contact-info" data-aos="zoom-in" data-aos-delay="400">
-          <h4>Contact Us</h4>
-          <p>📞 Phone: +91-XXXXX-XXXXX</p>
-          <p>📧 Email: info@omgurudev.org</p>
-          <p>
-            📍 Address: Ho No 30 Rashtramata jijau housing society Sawangi
-            (Harsul), Chhatrapati Sambhajinagar, Maharashtra 431008
-          </p>
-          <b>Office Number - 9112401041</b>
+          <h4>{t("help.contactUs")}</h4>
+          <p>{t("help.phone")}</p>
+          <p>{t("help.email")}</p>
+          <p>{t("help.address")}</p>
           <div className="social-links">
             <a href="#">
               <FaFacebook />
@@ -180,24 +176,24 @@ const Help = () => {
         </div>
       </section>
 
-      {/* Impact Stats */}
+      {/* Impact Section */}
       <section className="impact-section">
-        <h2>Our Impact</h2>
+        <h2>{t("help.ourImpact")}</h2>
         <div className="impact-stats">
           <div className="stat-card">
             <FaUsers className="stat-icon" />
             <h3>{families}+</h3>
-            <p>Families Helped</p>
+            <p>{t("help.familiesHelped")}</p>
           </div>
           <div className="stat-card">
             <FaChild className="stat-icon" />
             <h3>{children}+</h3>
-            <p>Children Supported</p>
+            <p>{t("help.childrenSupported")}</p>
           </div>
           <div className="stat-card">
             <FaProjectDiagram className="stat-icon" />
             <h3>{projects}+</h3>
-            <p>Projects Completed</p>
+            <p>{t("help.projectsCompleted")}</p>
           </div>
         </div>
       </section>

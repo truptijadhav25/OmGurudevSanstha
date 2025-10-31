@@ -1,68 +1,68 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './Hero.css';
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import "./Hero.css";
+import { useTranslation } from "react-i18next";
 
 // Slogans with colors
 const slogans = [
-  "Empowering Communities",
-  "Serving with Purpose",
-  "Creating Impact",
-  "Extending a Hand, Changing a Life",
-  "Together for a Better Tomorrow"
+  "hero.slogan1",
+  "hero.slogan2",
+  "hero.slogan3",
+  "hero.slogan4",
+  "hero.slogan5",
 ];
+
 const sloganColors = [
   "#ff6b6b", // red-pink
   "#1dd1a1", // green-teal
   "#54a0ff", // blue
   "#f368e0", // purple-pink
-  "#feca57"  // yellow-orange
-];
-
-// Notification messages
-const donationMessages = [
-  "Donate today and make a difference! Every contribution counts.",
-  "Your support brings hope and smiles to those in need.",
-  "Together, we can create a brighter future for all."
+  "#feca57", // yellow-orange
 ];
 
 const Hero = () => {
+  const { t } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(0);
   const navigate = useNavigate();
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentIndex(prev => (prev + 1) % slogans.length);
-    }, 4000); // slower for readability
+      setCurrentIndex((prev) => (prev + 1) % slogans.length);
+    }, 4000);
     return () => clearInterval(timer);
   }, []);
 
   const handleDonate = () => {
-    navigate('/help');
+    navigate("/help");
     window.scrollTo(0, 0);
   };
 
   return (
     <section className="hero-section">
       <div className="hero-content">
-
-        {/* NGO Logo with animation */}
+        {/* NGO Logo */}
         <div className="hero-logo-container">
-          <img src="/Om logo.jpg" alt="Om Gurudev NGO Logo" className="hero-logo" />
+          <img
+            src="/Om logo.jpg"
+            alt={t("hero.logoAlt")}
+            className="hero-logo"
+          />
         </div>
 
-
         <h1 className="hero-heading animate__animated animate__fadeInDown">
-          Welcome to Om Gurudev NGO
+          {t("hero.welcome")}
         </h1>
 
         {/* Notification Banner */}
         <div className="notification-banner hero-banner">
           <div className="marquee">
-            {donationMessages.map((msg, i) => (
-              <div key={i} className="scrolling-text">
-                {msg}
-              </div>
-            ))}
+            {[t("hero.donationMsg1"), t("hero.donationMsg2"), t("hero.donationMsg3")].map(
+              (msg, i) => (
+                <div key={i} className="scrolling-text">
+                  {msg}
+                </div>
+              )
+            )}
           </div>
         </div>
 
@@ -72,14 +72,14 @@ const Hero = () => {
           className="hero-slogan fade-scale"
           style={{ color: sloganColors[currentIndex] }}
         >
-          {slogans[currentIndex]}
+          {t(slogans[currentIndex])}
         </p>
 
         <button
           className="hero-btn animate__animated animate__fadeInUp"
           onClick={handleDonate}
         >
-          Donate
+          {t("hero.donate")}
         </button>
       </div>
     </section>

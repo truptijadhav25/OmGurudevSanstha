@@ -1,71 +1,73 @@
-import React from 'react';
-import './Team.css';
-import { FaLinkedin, FaTwitter, FaInstagram } from 'react-icons/fa';
+// src/components/Team.js
+import React from "react";
+import { useTranslation } from "react-i18next";
+import "./Team.css";
+import { FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const teamMembers = [
   {
-    name: 'Smt. Priti Engle',
-    role: 'President',
-    image: '/priti ingle.jpg',
-    bio: "Founder of an NGO dedicated to social upliftment and rural development. Over a decade of service leading educational programs, women's empowerment initiatives, and community health projects",
+    nameKey: "team.members.priti.name",
+    roleKey: "team.members.priti.role",
+    image: "/priti ingle.jpg",
+    bioKey: "team.members.priti.bio",
     linkedin: "#",
     twitter: "#",
-    instagram: "#"
+    instagram: "#",
   },
   {
-    name: 'Shree. Ankush Sapkal',
-    role: 'Vice President',
-    image: '/ankush sapkal.jpg',
-    bio: 'Leader in digital transformation and education with impact in the IT industry. Helps students secure IT and cybersecurity careers through training programs and mentorship.',
+    nameKey: "team.members.ankush.name",
+    roleKey: "team.members.ankush.role",
+    image: "/ankush sapkal.jpg",
+    bioKey: "team.members.ankush.bio",
     linkedin: "#",
     twitter: "#",
-    instagram: "#"
+    instagram: "#",
   },
   {
-    name: 'Dr. Dilip Pawar',
-    role: 'Secretary',
-    image: '/dilip pawar.jpg',
-    bio: 'Drives operations and coordinates stakeholders for effective program execution. Made significant impact in education and microfinance solutions for underserved communities.',
-    linkedin: "#"
+    nameKey: "team.members.dilip.name",
+    roleKey: "team.members.dilip.role",
+    image: "/dilip pawar.jpg",
+    bioKey: "team.members.dilip.bio",
+    linkedin: "#",
   },
   {
-    name: 'Shree. Rama Engle',
-    role: 'Joint Secretary',
-    image: '/rama_ingle.jpg',
-    bio: 'Experienced advocate and astrology expert with significant impact in legal and spiritual guidance.',
-    linkedin: "#"
+    nameKey: "team.members.rama.name",
+    roleKey: "team.members.rama.role",
+    image: "/rama_ingle.jpg",
+    bioKey: "team.members.rama.bio",
+    linkedin: "#",
   },
   {
-    name: 'Smt. Dipali Dilip Pawar',
-    role: 'Treasurer',
-    image: '/dipali_paar.jpg',
-    bio: 'Over 9 years in the financial and banking sector, actively involved in social work and community development, ensuring transparent financial planning.',
-    linkedin: "#"
+    nameKey: "team.members.dipali.name",
+    roleKey: "team.members.dipali.role",
+    image: "/dipali_paar.jpg",
+    bioKey: "team.members.dipali.bio",
+    linkedin: "#",
   },
   {
-    name: 'Smt. Renuka Sapkal',
-    role: 'Team Member',
-    image: '/Renuka_Sapkal.jpg',
-    bio: 'Renuka Sapkal is an experienced professional committed to supporting individuals in the IT industry. She actively guides job seekers in enhancing their skills, preparing for opportunities, and achieving sustainable career growth. Her expertise and dedication to empowering people make her a valuable addition to the NGO body.',
-    linkedin: "#"
+    nameKey: "team.members.renuka.name",
+    roleKey: "team.members.renuka.role",
+    image: "/Renuka_Sapkal.jpg",
+    bioKey: "team.members.renuka.bio",
+    linkedin: "#",
   },
   {
-    name: 'Shree Kakasaheb Pawar',
-    role: 'Team Member',
-    image: '/kakasaheb_pawar.jpg',
-    bio: 'Kakasaheb Pawar has been actively contributing to the field of education by supporting various initiatives aimed at improving learning opportunities. His dedication to empowering students and creating awareness about the importance of education makes him a valuable member of the NGO body.',
-    linkedin: "#"
-  }
+    nameKey: "team.members.kakasaheb.name",
+    roleKey: "team.members.kakasaheb.role",
+    image: "/kakasaheb_pawar.jpg",
+    bioKey: "team.members.kakasaheb.bio",
+    linkedin: "#",
+  },
 ];
 
 const Team = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="team-section">
       <div className="sparkle-bg"></div>
-      <h2 className="team-title">✨ Meet Our Team ✨</h2>
-      <p className="team-subtitle">
-        Our leadership brings experience, passion, and community-first values.
-      </p>
+      <h2 className="team-title">✨ {t("team.title")} ✨</h2>
+      <p className="team-subtitle">{t("team.subtitle")}</p>
       <div className="team-grid">
         {teamMembers.map((member, index) => (
           <div
@@ -74,14 +76,18 @@ const Team = () => {
             style={{ animationDelay: `${index * 0.2}s` }}
           >
             <div className="team-img-wrapper floating">
-              <img src={member.image} alt={member.name} className="team-img" />
+              <img src={member.image} alt={t(member.nameKey)} className="team-img" />
             </div>
             <div className="team-info">
-              <h3>{member.name}</h3>
-              <p className={`team-role role-${member.role.replace(/\s+/g, '').toLowerCase()}`}>
-                {member.role}
+              <h3>{t(member.nameKey)}</h3>
+              <p
+                className={`team-role role-${t(member.roleKey)
+                  .replace(/\s+/g, "")
+                  .toLowerCase()}`}
+              >
+                {t(member.roleKey)}
               </p>
-              <p className="team-bio">{member.bio}</p>
+              <p className="team-bio">{t(member.bioKey)}</p>
               <div className="social-links">
                 {member.linkedin && (
                   <a href={member.linkedin} target="_blank" rel="noopener noreferrer">

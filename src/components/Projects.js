@@ -2,49 +2,56 @@ import React, { useState } from "react";
 import "./Projects.css";
 import { motion } from "framer-motion";
 import { FaTags } from "react-icons/fa";
-
-const projectData = [
-  {
-    title: "Sanitary Napkin Distribution",
-    image: "/WomenImg.png",
-    description:
-      "Providing sanitary napkins to school girls to promote menstrual hygiene, awareness, and reduce dropout rates.",
-    tags: ["1000+ Girls", "15+ Schools"],
-    category: "Ongoing",
-  },
-  {
-    title: "Tree Plantation",
-    image: "/Tree.jpg",
-    description:
-      "Organizing tree plantation and clean-up drives in rural & urban areas to build a sustainable and greener environment.",
-    tags: ["3000+ Trees", "20 Locations"],
-    category: "Completed",
-  },
-  {
-    title: "Mahila Sakshamikaran",
-    image: "/WomenEmpowerment.png",
-    description:
-      "Skill training programs for women in tailoring, beauty, and small entrepreneurship to empower self-reliance.",
-    tags: ["120+ Women", "5 Training Batches"],
-    category: "Ongoing",
-  },
-  {
-    title: "Navi Disha",
-    image: "/NaviDisha.jpg",
-    description:
-      "Skill training & placement initiative focused on preparing youth for careers in IT, Cyber Security, and professional fields. Successfully trained and placed 100+ students in reputed companies.",
-    tags: ["100+ Students", "Cyber Security", "Placements"],
-    category: "Completed",
-  },
-];
-
-const categories = ["All", "Ongoing", "Completed"];
+import { useTranslation } from "react-i18next";
 
 const Projects = () => {
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const { t } = useTranslation();
+
+  const projectData = [
+    {
+      title: t("projects.sanitaryTitle"),
+      image: "/WomenImg.png",
+      description: t("projects.sanitaryDesc"),
+      tags: [t("projects.sanitaryTag1"), t("projects.sanitaryTag2")],
+      category: t("projects.ongoing"),
+    },
+    {
+      title: t("projects.treeTitle"),
+      image: "/Tree.jpg",
+      description: t("projects.treeDesc"),
+      tags: [t("projects.treeTag1"), t("projects.treeTag2")],
+      category: t("projects.completed"),
+    },
+    {
+      title: t("projects.womenEmpTitle"),
+      image: "/WomenEmpowerment.png",
+      description: t("projects.womenEmpDesc"),
+      tags: [t("projects.womenEmpTag1"), t("projects.womenEmpTag2")],
+      category: t("projects.ongoing"),
+    },
+    {
+      title: t("projects.naviTitle"),
+      image: "/NaviDisha.jpg",
+      description: t("projects.naviDesc"),
+      tags: [
+        t("projects.naviTag1"),
+        t("projects.naviTag2"),
+        t("projects.naviTag3"),
+      ],
+      category: t("projects.completed"),
+    },
+  ];
+
+  const categories = [
+    t("projects.all"),
+    t("projects.ongoing"),
+    t("projects.completed"),
+  ];
+
+  const [selectedCategory, setSelectedCategory] = useState(t("projects.all"));
 
   const filteredProjects =
-    selectedCategory === "All"
+    selectedCategory === t("projects.all")
       ? projectData
       : projectData.filter((p) => p.category === selectedCategory);
 
@@ -56,7 +63,7 @@ const Projects = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
       >
-        Our Projects
+        {t("projects.title")}
       </motion.h2>
 
       {/* Filter Buttons */}

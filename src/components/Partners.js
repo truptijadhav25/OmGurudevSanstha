@@ -1,49 +1,46 @@
-// src/components/Partners.js
-import React from 'react';
-import './Partners.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
-const partnersData = [
-  {
-    name: 'Sythexhub Pvt Ltd',
-    logo: '/synthex.avif',
-    type: 'Technology Partner',
-    description: 'Empowered our infrastructure with scalable software and secure cloud platforms.',
-  },
-  {
-    name: 'AARNA Technologies Pvt Ltd',
-    logo: '/Arnaa-logo.png',
-    type: 'IT Solutions Partner',
-    description: 'Delivered innovative tech solutions for community outreach and monitoring.',
-  },
-  {
-    name: 'Perfect Urban Co-operative Society',
-    logo: '/perfect.png',
-    type: 'Financial Ally',
-    description: 'Supported financial literacy programs and micro-savings initiatives.',
-  },
-  {
-    name: 'Truth Tech Enterprise',
-    logo: '/Truth_take.png',
-    type: 'Innovation Partner',
-    description: 'Brought automation and AI-based insights to improve impact tracking.',
-  },
-];
+import React from "react";
+import { useTranslation } from "react-i18next";
+import "./Partners.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const Partners = () => {
+  const { t } = useTranslation();
+
+  const partnersData = [
+    {
+      logo: "/synthex.avif",
+      name: t("partners.list.synthex.name"),
+      type: t("partners.list.synthex.type"),
+      description: t("partners.list.synthex.description")
+    },
+    {
+      logo: "/Arnaa-logo.png",
+      name: t("partners.list.aarna.name"),
+      type: t("partners.list.aarna.type"),
+      description: t("partners.list.aarna.description")
+    },
+    {
+      logo: "/perfect.png",
+      name: t("partners.list.perfect.name"),
+      type: t("partners.list.perfect.type"),
+      description: t("partners.list.perfect.description")
+    },
+    {
+      logo: "/Truth_take.png",
+      name: t("partners.list.truth.name"),
+      type: t("partners.list.truth.type"),
+      description: t("partners.list.truth.description")
+    }
+  ];
+
   return (
     <section id="partners" className="partners-section py-5">
       <div className="container text-center">
-        <h2 className="section-title mb-3">Our Core Partners</h2>
-        <p className="section-subtitle mb-5">
-          Collaborating with innovators to build a better future.
-        </p>
+        <h2 className="section-title mb-3">{t("partners.title")}</h2>
+        <p className="section-subtitle mb-5">{t("partners.subtitle")}</p>
         <div className="row justify-content-center">
           {partnersData.map((partner, index) => (
-            <div
-              className="col-sm-10 col-md-6 col-lg-4 col-xl-3 mb-4"
-              key={index}
-            >
+            <div className="col-sm-10 col-md-6 col-lg-4 col-xl-3 mb-4" key={index}>
               <div
                 className="partner-card h-100 fade-in"
                 style={{ animationDelay: `${index * 0.2}s` }}
