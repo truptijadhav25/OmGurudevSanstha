@@ -47,6 +47,13 @@ const Footer = () => {
                   {t("navbar.projects")}
                 </NavLink>
               </li>
+              <NavLink
+                to="/help"
+                className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}
+              >
+                {t("navbar.help")}
+              </NavLink>
+
             </ul>
           </div>
 
