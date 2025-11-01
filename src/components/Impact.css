@@ -123,17 +123,17 @@
   line-height: 1.5;
 }
 
-/* Mobile vertical scroll only for Impact section */
+/* ✅ Responsive fix: show all impact cards without scrollbar */
 @media (max-width: 500px) {
   .impact-section {
-    max-height: 90vh;      /* section takes almost full screen height */
-    overflow-y: auto;      /* enable vertical scrolling */
-    padding-right: 0.5rem; /* avoid scrollbar overlap */
+    max-height: none;           /* remove height limit */
+    overflow: visible;          /* remove scroll bar */
+    padding: 3rem 1rem;         /* balanced padding for mobile */
   }
 
   .impact-grid {
     grid-template-columns: 1fr; /* one card per row */
-    gap: 1rem;
+    gap: 1.5rem;
   }
 
   .impact-card {

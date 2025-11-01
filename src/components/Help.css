@@ -582,3 +582,113 @@ button:hover {
     padding: 14px 36px;
   }
 }
+/* ✅ Fix for Half-Hidden Buttons on Mobile */
+@media (max-width: 768px) {
+  /* Ensure cards have enough padding for buttons */
+  .help-card {
+    padding-bottom: 3.5rem !important;
+  }
+
+  /* Prevent content from being cut off */
+  .help-options {
+    overflow: visible !important;
+  }
+
+  /* Make sure buttons stay inside the view */
+  .card-btn,
+  button {
+    margin-bottom: 0.8rem !important;
+  }
+
+  /* Ensure container scrolls smoothly and shows all */
+  .help-container {
+    overflow-y: auto !important;
+    padding-bottom: 100px !important;
+  }
+}
+/* Base styles remain same */
+
+/* ✅ Mobile fix section */
+@media (max-width: 768px) {
+
+  /* Make sure nothing is cut off inside the card */
+  .help-card {
+    padding: 2rem 1rem 5rem !important; /* big bottom padding */
+    margin-bottom: 2rem !important;
+    min-height: unset !important;
+    height: auto !important;
+    overflow: visible !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* Allow all content to be seen */
+  .help-options {
+    overflow: visible !important;
+    height: auto !important;
+  }
+
+  /* Ensure container can scroll properly */
+  .help-container {
+    overflow: visible !important;
+    padding-bottom: 150px !important;
+  }
+
+  /* Make buttons visible and centered */
+  .card-btn,
+  .donate-btn,
+  button {
+    margin-top: 1rem !important;
+    margin-bottom: 1.5rem !important;
+    display: inline-block !important;
+  }
+
+  /* Fix donate button group alignment */
+  .donate-buttons {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+}
+
+/* ✅ Final Fix: Make Donate Now & Volunteer Now buttons fully visible on mobile */
+@media (max-width: 768px) {
+  .help-hero {
+    position: relative;
+    height: auto !important;          /* allow section to expand */
+    overflow: visible !important;     /* prevent button clipping */
+    padding-bottom: 2rem !important;  /* extra space for buttons */
+  }
+
+  .help-hero-content {
+    position: relative;
+    z-index: 2;
+    overflow: visible !important;
+  }
+
+  .help-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding-bottom: 2rem;             /* ensure full button visibility */
+  }
+
+  .help-btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    text-align: center;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  body, html {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+}
